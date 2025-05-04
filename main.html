@@ -11,15 +11,13 @@
 		function secondHighest(arr) {
 			//Write your code here
 			
-			arr.sort()
-			let n=arr.length;
-			let hs=new Set(arr);
-			if(n === 0 || n ==== 1 || hs.size === 1){
+			arr = arr.map(Number);
+			let unique = Array.from(new Set(arr));
+			if (unique.length < 2) {
 				return Number.NEGATIVE_INFINITY;
-
 			}
-			
-			return arr[n-2];
+			unique.sort((a, b) => b - a);
+			return unique[1];
 			
 		}
 
